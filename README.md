@@ -1,22 +1,50 @@
-# jsk_roseus
+roseus_mongo
+============
 
-[![Build Status](https://travis-ci.org/jsk-ros-pkg/jsk_roseus.png?branch=master)](https://travis-ci.org/jsk-ros-pkg/jsk_roseus)
-[![Documentation Status](https://readthedocs.org/projects/euslisp-docs/badge/?version=latest)](http://euslisp-docs.readthedocs.org/en/latest/roseus/)
+## parameters
 
-## Tips
+### mongodb related parameters
 
-### Run roseus on gdb
-```
-gdb --args bash roseus foo.l
-```
+- `*mongo-database*` (string, default: param `robot/database` or `test`)
 
-## Deb Status
+  Database name used by mongodb
 
-| Package | Indigo (Saucy) | Indigo (Trusty) | Jade (Trusty) | Jade (Vivid) | Kinetic (Wily) | Kinetic (Xenial) |
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| euslisp (32-bit) | [![Build Status](http://build.ros.org/job/Ibin_uS32__euslisp__ubuntu_saucy_i386__binary/badge/icon)](http://build.ros.org/job/Ibin_uS32__euslisp__ubuntu_saucy_i386__binary/) | [![Build Status](http://build.ros.org/job/Ibin_uT32__euslisp__ubuntu_trusty_i386__binary/badge/icon)](http://build.ros.org/job/Ibin_uT32__euslisp__ubuntu_trusty_i386__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uT32__euslisp__ubuntu_trusty_i386__binary/badge/icon)](http://build.ros.org/job/Jbin_uT32__euslisp__ubuntu_trusty_i386__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uV32__euslisp__ubuntu_vivid_i386__binary/badge/icon)](http://build.ros.org/job/Jbin_uV32__euslisp__ubuntu_vivid_i386__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uW32__euslisp__ubuntu_wily_i386__binary/badge/icon)](http://build.ros.org/job/Kbin_uW32__euslisp__ubuntu_wily_i386__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uX32__euslisp__ubuntu_xenial_i386__binary/badge/icon)](http://build.ros.org/job/Kbin_uX32__euslisp__ubuntu_xenial_i386__binary/) |
-| euslisp (64-bit) | [![Build Status](http://build.ros.org/job/Ibin_uS64__euslisp__ubuntu_saucy_amd64__binary/badge/icon)](http://build.ros.org/job/Ibin_uS64__euslisp__ubuntu_saucy_amd64__binary/) | [![Build Status](http://build.ros.org/job/Ibin_uT64__euslisp__ubuntu_trusty_amd64__binary/badge/icon)](http://build.ros.org/job/Ibin_uT64__euslisp__ubuntu_trusty_amd64__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uT64__euslisp__ubuntu_trusty_amd64__binary/badge/icon)](http://build.ros.org/job/Jbin_uT64__euslisp__ubuntu_trusty_amd64__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uV64__euslisp__ubuntu_vivid_amd64__binary/badge/icon)](http://build.ros.org/job/Jbin_uV64__euslisp__ubuntu_vivid_amd64__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uW64__euslisp__ubuntu_wily_amd64__binary/badge/icon)](http://build.ros.org/job/Kbin_uW64__euslisp__ubuntu_wily_amd64__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uX64__euslisp__ubuntu_xenial_amd64__binary/badge/icon)](http://build.ros.org/job/Kbin_uX64__euslisp__ubuntu_xenial_amd64__binary/) |
-| jskeus (32-bit) | [![Build Status](http://build.ros.org/job/Ibin_uS32__jskeus__ubuntu_saucy_i386__binary/badge/icon)](http://build.ros.org/job/Ibin_uS32__jskeus__ubuntu_saucy_i386__binary/) | [![Build Status](http://build.ros.org/job/Ibin_uT32__jskeus__ubuntu_trusty_i386__binary/badge/icon)](http://build.ros.org/job/Ibin_uT32__jskeus__ubuntu_trusty_i386__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uT32__jskeus__ubuntu_trusty_i386__binary/badge/icon)](http://build.ros.org/job/Jbin_uT32__jskeus__ubuntu_trusty_i386__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uV32__jskeus__ubuntu_vivid_i386__binary/badge/icon)](http://build.ros.org/job/Jbin_uV32__jskeus__ubuntu_vivid_i386__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uW32__jskeus__ubuntu_wily_i386__binary/badge/icon)](http://build.ros.org/job/Kbin_uW32__jskeus__ubuntu_wily_i386__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uX32__jskeus__ubuntu_xenial_i386__binary/badge/icon)](http://build.ros.org/job/Kbin_uX32__jskeus__ubuntu_xenial_i386__binary/) |
-| jskeus (64-bit) | [![Build Status](http://build.ros.org/job/Ibin_uS64__jskeus__ubuntu_saucy_amd64__binary/badge/icon)](http://build.ros.org/job/Ibin_uS64__jskeus__ubuntu_saucy_amd64__binary/) | [![Build Status](http://build.ros.org/job/Ibin_uT64__jskeus__ubuntu_trusty_amd64__binary/badge/icon)](http://build.ros.org/job/Ibin_uT64__jskeus__ubuntu_trusty_amd64__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uT64__jskeus__ubuntu_trusty_amd64__binary/badge/icon)](http://build.ros.org/job/Jbin_uT64__jskeus__ubuntu_trusty_amd64__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uV64__jskeus__ubuntu_vivid_amd64__binary/badge/icon)](http://build.ros.org/job/Jbin_uV64__jskeus__ubuntu_vivid_amd64__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uW64__jskeus__ubuntu_wily_amd64__binary/badge/icon)](http://build.ros.org/job/Kbin_uW64__jskeus__ubuntu_wily_amd64__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uX64__jskeus__ubuntu_xenial_amd64__binary/badge/icon)](http://build.ros.org/job/Kbin_uX64__jskeus__ubuntu_xenial_amd64__binary/) |
-| jsk_roseus (32-bit) | [![Build Status](http://build.ros.org/job/Ibin_uS32__jsk_roseus__ubuntu_saucy_i386__binary/badge/icon)](http://build.ros.org/job/Ibin_uS32__jsk_roseus__ubuntu_saucy_i386__binary/) | [![Build Status](http://build.ros.org/job/Ibin_uT32__jsk_roseus__ubuntu_trusty_i386__binary/badge/icon)](http://build.ros.org/job/Ibin_uT32__jsk_roseus__ubuntu_trusty_i386__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uT32__jsk_roseus__ubuntu_trusty_i386__binary/badge/icon)](http://build.ros.org/job/Jbin_uT32__jsk_roseus__ubuntu_trusty_i386__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uV32__jsk_roseus__ubuntu_vivid_i386__binary/badge/icon)](http://build.ros.org/job/Jbin_uV32__jsk_roseus__ubuntu_vivid_i386__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uW32__jsk_roseus__ubuntu_wily_i386__binary/badge/icon)](http://build.ros.org/job/Kbin_uW32__jsk_roseus__ubuntu_wily_i386__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uX32__jsk_roseus__ubuntu_xenial_i386__binary/badge/icon)](http://build.ros.org/job/Kbin_uX32__jsk_roseus__ubuntu_xenial_i386__binary/) |
-| jsk_roseus (64-bit) | [![Build Status](http://build.ros.org/job/Ibin_uS64__jsk_roseus__ubuntu_saucy_amd64__binary/badge/icon)](http://build.ros.org/job/Ibin_uS64__jsk_roseus__ubuntu_saucy_amd64__binary/) | [![Build Status](http://build.ros.org/job/Ibin_uT64__jsk_roseus__ubuntu_trusty_amd64__binary/badge/icon)](http://build.ros.org/job/Ibin_uT64__jsk_roseus__ubuntu_trusty_amd64__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uT64__jsk_roseus__ubuntu_trusty_amd64__binary/badge/icon)](http://build.ros.org/job/Jbin_uT64__jsk_roseus__ubuntu_trusty_amd64__binary/) | [![Build Status](http://build.ros.org/job/Jbin_uV64__jsk_roseus__ubuntu_vivid_amd64__binary/badge/icon)](http://build.ros.org/job/Jbin_uV64__jsk_roseus__ubuntu_vivid_amd64__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uW64__jsk_roseus__ubuntu_wily_amd64__binary/badge/icon)](http://build.ros.org/job/Kbin_uW64__jsk_roseus__ubuntu_wily_amd64__binary/) | [![Build Status](http://build.ros.org/job/Kbin_uX64__jsk_roseus__ubuntu_xenial_amd64__binary/badge/icon)](http://build.ros.org/job/Kbin_uX64__jsk_roseus__ubuntu_xenial_amd64__binary/) |
+- `*mongo-collection*` (string, default: param `robot/name` or `test`)
+
+  Collection name used by mongodb
+
+- `*mongo-query-default-buffer-size*` (int, default 4096 [byte])
+
+  Buffer size reserved for storing json raw string while serialization
+
+- `*mongo-service-query*` (string, default: `/message_store/query_messages`)
+
+  Service name for querying message
+  
+- `*mongo-service-insert*` (string, default: `/message_store/insert`)
+
+  Service name for inserting message
+  
+- `*mongo-service-delete*` (string, default: `/message_store/delete`)
+
+  Service name for deleting message
+  
+- `*mongo-service-timeout*` (int, default: param `~timeout` or 30)
+
+  Seconds to wait for database server. Setting this value to `-1` means waiting forever.
+  On euslisp only simulation without mongodb, it is recommended to set this value to `0` to avoid stuck.
+
+### json(bson) related parameters
+
+- `*json-parse-object-as*` (`:alist` or `:plist`, default: `:alist`)
+
+  Destination type of evaluating json object
+  
+- `*json-parse-key-function*` (`#'identity`, `#'string->keyword` or possible other functions, default: `#'string->keyword`)
+
+  Destination type of key when evaluation json object
+
+
+## How to use
+
+see [euslisp/mongo-client-sample.l](euslisp/mongo-client-sample.l)

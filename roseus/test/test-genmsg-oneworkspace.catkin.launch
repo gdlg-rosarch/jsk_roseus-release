@@ -1,4 +1,0 @@
-<launch>
-  <test test-name="test_genmsg_on_workspace" pkg="roseus" type="test-genmsg.sh" args="--one-workspace"
-        time-limit="600" />
-</launch>
